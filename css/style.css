@@ -1,0 +1,633 @@
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:  local('PT Sans Narrow'),
+        url('../fonts/PT_Sans-Narrow-Web-Regular.woff2') format('woff2'),
+        url('../fonts/PT_Sans-Narrow-Web-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:  local('PT Sans Narrow'),
+        url('../fonts/PT_Sans-Narrow-Web-Bold.woff2') format('woff2'),
+        url('../fonts/PT_Sans-Narrow-Web-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:  local('PT Sans'),
+        url('../fonts/pt-sans-v17-latin_cyrillic-regular.woff2') format('woff2'),
+        url('../fonts/pt-sans-v17-latin_cyrillic-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:  local('PT Sans'),
+        url('../fonts/pt-sans-v17-latin_cyrillic-700.woff2') format('woff2'),
+        url('../fonts/pt-sans-v17-latin_cyrillic-700.woff') format('woff');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+:active, :hover, :focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited, a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-family: 'PT Sans', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #242424;
+  background-color: #fbf7f4;
+}
+
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.main-container {
+  flex-grow: 1;
+  padding: 64px 0 60px 0;
+}
+
+.button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: #000;
+}
+
+.button-light {
+  color: #242424;
+  background-color: #ffffff;
+}
+
+/* header start */
+
+.page-header {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 470px;
+}
+
+.nav-user {
+  max-width: 240px;
+  margin-left: auto;
+}
+
+.nav-link {
+  display: block;
+  padding: 24px 20px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #000;
+}
+
+.nav-user .nav-link {
+  min-width: 16px;
+  min-height: 22px;
+}
+
+.nav-link:hover {
+  background: #595959;
+}
+
+.nav-link:focus {
+  border: 4px solid #E7E7E7;
+}
+
+.page-header-logo {
+  display: block;
+  max-width: 140px;
+  padding: 24px 0;
+  margin-right: 100px;
+}
+
+.nav-link-search {
+  background: url(../svg/search-icon.svg) center/15px no-repeat;
+}
+
+.nav-link-cart {
+  background: url(../svg/cart-icon.svg) center/15px no-repeat;
+}
+
+.nav-link-user {
+  background: url(../svg/user-icon.svg) center/12px 14px no-repeat;
+}
+
+
+/* main */
+
+.main-index {
+  color: #fff;
+  background: url(../images/interior.jpg) center no-repeat #000;
+  background-size: cover;
+}
+
+.section-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding: 40px;
+  color: #242424;
+  background: url(../images/noisy-texture-80x80.png) #fbf7f4;
+}
+
+.section-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.logo {
+  margin: 0 auto 64px;
+}
+
+
+/* advantages */
+
+.advantages {
+  margin: 0 auto;
+}
+
+.advantages-list {
+  display: flex;
+  text-align: center;
+  margin-bottom: 58px;
+}
+
+.advantages-item {
+  width: 33.33%;
+  margin-right: 55px;
+}
+
+.advantages-item:last-child {
+  margin-right: 0;
+}
+
+.advantages-title {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
+.advantages-title::after {
+  content: '';
+  display: block;
+  margin: 19px auto;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+/* services */
+
+.services {
+  width: 390px;
+  text-transform: uppercase;
+}
+
+.index-title {
+  margin-bottom: 28px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
+/* .services-title {
+  margin-bottom: 28px;
+} */
+
+.services-list {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.services-price {
+  text-align: right;
+  color: #AF7842;
+}
+
+/* gallery */
+
+.gallery {
+  width: 390px;
+}
+
+/* .gallery-title {
+  margin-bottom: 20px;
+} */
+
+/* contacts */
+
+.contacts {
+  width: 350px;
+  font-weight: 700;
+}
+
+/* .contacts-title {
+  margin-bottom: 24px;
+} */
+
+.contacts-subtitle {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #AF7842;
+}
+
+.contacts-address {
+  font-style: normal;
+}
+
+.contacts-phone {
+  font-family: 'PT Sans Narrow';
+  font-size: 24px;
+  line-height: 29px;
+  text-decoration-line: underline;
+  color: #242424;
+}
+
+.feedback-button {
+  color: #242424;
+  background-color: #fff;
+}
+
+/* appointment */
+
+.appointment {
+  width: 420px;
+}
+
+/* .appointment-title {
+  margin-bottom: 20px;
+} */
+
+.appointment-text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #595959;
+}
+
+.form-label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+input::placeholder {
+  font-weight: 700;
+  font-size: 16px;
+  color: #BDBDBD;
+}
+
+
+/* footer */
+
+.page-footer {
+  font-weight: 700;
+  font-size: 14px;
+  background: url(../images/noisy-texture-80x80.png) #242424;
+  color: #fff;
+}
+
+.page-footer-container {
+  display: flex;
+  padding: 40px 0;
+}
+
+.page-footer-logo {
+  margin-bottom: 28px;
+}
+
+.footer-contacts {
+  width: 200px;
+  margin-right: 130px;
+}
+
+.footer-contacts-text {
+  line-height: 20px;
+}
+
+.footer-contacts-address {
+  font-style: normal;
+}
+
+.page-footer-title {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.footer-contacts-phone {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  text-decoration: underline;
+}
+
+.footer-subscribe {
+  max-width: 290px;
+}
+
+.footer-contacts-map-link {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.footer-social {
+  max-width: 190px;
+  margin-left: auto;
+}
+
+.footer-social-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-social-item {
+  width: 56px;
+  height: 44px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.footer-social-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.academy-link {
+  color: #DBB590;
+}
+
+/* catalog */ /* catalog */
+
+.main-inner {
+  padding-top: 40px;
+}
+
+.catalog-products {
+  display: flex;
+}
+
+.inner-header-title {
+  margin-bottom: 16px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
+.breadcrumbs {
+  display: flex;
+}
+
+.breadcrumbs-item:not(:last-child) {
+  margin-right: 32px;
+  text-decoration: underline;
+}
+
+/* filters */
+
+.catalog-filter {
+  width: 220px;
+  margin-right: 20px;
+}
+
+.catalog-filter-title {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.control {
+  font-weight: 700;
+}
+
+.catalog-wrapper {
+  width: 700px;
+}
+
+.sorting-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(79, 70, 60, 0.16);
+}
+
+.select-control {
+  width: 260px;
+  height: 44px;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: inherit;
+  border: 2px solid #242424;
+}
+
+.sorting-container .button {
+  display: block;
+  width: 56px;
+  height: 44px;
+}
+
+/* cards */
+
+.product-card {
+  background-color: #fff;
+}
+
+.product-card-title {
+  font-weight: 700;
+  color: #000000;
+}
+
+.product-card-price {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #814B18;
+}
+
+/* pagination */
+
+.pagination-container {
+  display: flex;
+  padding: 16px;
+  background-color: #fff;
+}
+
+.pagination-list {
+  display: flex;
+}
+
+.pagination-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.pagination-link {
+  display: block;
+  width: 50px;
+  height: 44px;
+  padding: 14px 20px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  color: #ffffff;
+  background: #000000;
+}
+
+.pagination-disabled {
+  width: 56px;
+  background: #595959;
+}
+
+.pagination-current {
+  color: #242424;
+  background-color: #ffffff;
+}
+
+.pagination-button {
+  margin-left: auto;
+}
+
+.pagination-next {
+  width: 56px;
+}
