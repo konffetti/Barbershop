@@ -21,10 +21,10 @@
                         <a href="about.html" class="nav-link">О нас</a>
                     </li>
                     <li class="nav-item">
-                        <a href="catalog.html" class="nav-link nav-link-active">Каталог</a>
+                        <a href="catalog.html" class="nav-link nav-link-current">Каталог</a>
                     </li>
                     <li class="nav-item">
-                        <a href="faq.html" class="nav-link">Частые вопросы</a>
+                        <a href="faq.html" class="nav-link ">Частые вопросы</a>
                     </li>
                 </ul>
 
@@ -63,6 +63,12 @@
                 <ul class="breadcrumbs">
                     <li class="breadcrumbs-item">
                         <a class="breadcrumbs-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="breadcrumbs-item">
+                        <a class="breadcrumbs-link" href="index.html">Зеленая</a>
+                    </li>
+                    <li class="breadcrumbs-item">
+                        <a class="breadcrumbs-link" href="index.html">Красная</a>
                     </li>
                     <li class="breadcrumbs-item">
                         <a class="breadcrumbs-link">Каталог</a>
@@ -150,17 +156,21 @@
                 <div class="catalog-wrapper">
                     
                     <div class="sorting-container">
-                        <select class="select-control" aria-label="Сортировка">
-                            <option value="popular">Сначала популярное</option>
-                            <option value="cheap">Сначала недорогое</option>
-                            <option value="expensive">Сначала дорогое</option>
-                        </select>
-                        <a href="#" class="button button-light">
-                            <span class="visually-hidden">Показать список</span>
-                        </a>
-                        <a class="button" href="#">
-                            <span class="visually-hidden">Показать карточки</span>
-                        </a>
+                        <div class="sorting-group">
+                            <select class="select-control" aria-label="Сортировка">
+                                <option value="popular">Сначала популярное</option>
+                                <option value="cheap">Сначала недорогое</option>
+                                <option value="expensive">Сначала дорогое</option>
+                            </select>
+                        </div>
+                            <a href="#" class="card-grid-toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16"><path fill-rule="evenodd" d="M2 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-2 8a2 2 0 1 1 4 0 2 2 0 0 1-4 0ZM7 1a1 1 0 0 0 0 2h8a1 1 0 1 0 0-2H7ZM6 8a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm1 5a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H7Z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M2 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-2 8a2 2 0 1 1 4 0 2 2 0 0 1-4 0ZM7 1a1 1 0 0 0 0 2h8a1 1 0 1 0 0-2H7ZM6 8a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm1 5a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H7Z" clip-rule="evenodd"/></svg>
+                                <span class="visually-hidden">Показать список</span>
+                            </a>
+                            <a class="card-grid-toggle card-grid-toggle-current" href="#" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill-rule="evenodd" d="M0 2a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm6 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm10 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0ZM0 8a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm10 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm-8 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm10 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z" clip-rule="evenodd"/></svg>
+                                <span class="visually-hidden">Показать карточки</span>
+                            </a>
                     </div>
 
                     <ul class="product-list">
@@ -213,7 +223,7 @@
                             <div class="product-card-content">
                                 <a class="product-card-link-title" href="#!">
                                     <h3 class="product-card-title">
-                                        Nivea Men шампунь-уход  «Экстремальная свежесть с ментолом»
+                                        Nivea Men шампунь-уход «Экстремальная свежесть с ментолом»
                                     </h3>
                                 </a>
                                 <p class="product-card-price">173 ₽</p>
@@ -253,7 +263,7 @@
                     <div class="pagination-container">
                         <ul class="pagination-list">
                             <li class="pagination-item">
-                                <a class="pagination-link pagination-prev pagination-disabled" href="#!">0
+                                <a class="pagination-link pagination-prev pagination-disabled" href="#!">
                                     <span class="visually-hidden">Предыдущая страница</span>
                                 </a>
                             </li>
@@ -273,7 +283,7 @@
                                 <a class="pagination-link" href="#!">5</a>
                             </li>
                             <li class="pagination-item">
-                                <a class="pagination-link pagination-next" href="#!">6
+                                <a class="pagination-link pagination-next" href="#!">
                                     <span class="visually-hidden">Следующая страница</span>
                                 </a>
                             </li>
