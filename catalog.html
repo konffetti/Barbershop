@@ -84,43 +84,78 @@
                 <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
                     <fieldset class="catalog-filter-group">
                         <legend class="catalog-filter-title">
+                            Цена
+                        </legend>
+
+                        <div class="range">
+                            <div class="range-scale">
+                                <div class="range-bar" style="left: 42px; width: 136px;">
+                                    <button class="range-toggle range-toggle-min" type="button">
+                                        <span class="visually-hidden">Показать минимальную цену.</span>
+                                    </button>
+                                    <button class="range-toggle range-toggle-max" type="button">
+                                        <span class="visually-hidden">Показать максимальную цену.</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="range-wrapper-inputs">
+                                <label class="catalog-filter-label">от
+                                    <input class="catalog-filter-input" type="number" name="min-price" value="450"> ₽
+                                </label>
+                                <label class="catalog-filter-label">до
+                                    <input class="catalog-filter-input" type="number" name="max-price" value="1500" style="width: 45px"> ₽
+                                </label>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    
+                    <fieldset class="catalog-filter-group">
+                        <legend class="catalog-filter-title">
                             Производители
                         </legend>
                         <ul class="catalog-filter-list">
                             <li class="catalog-filter-item">
                                 <label class="control">
-                                    <input class="control-input" type="checkbox" name="bed-head-for-men" id="">
-                                    Bed Head for Men
+                                    <input class="visually-hidden control-input" type="checkbox" name="bed-head-for-men" id="">
+                                    <span class="control-mark"></span>
+                                    <span class="control-label">Bed Head for Men</span>
                                 </label>
                             </li>
                             <li class="catalog-filter-item">
                                 <label class="control">
-                                    <input class="control-input" type="checkbox" name="homme-deep-cleansing-cool" id="" checked>
-                                    Homme Deep Cleansing Cool
+                                    <input class="visually-hidden control-input" type="checkbox" name="homme-deep-cleansing-cool" id="" checked>
+                                    <span class="control-mark"></span>
+                                    <span class="control-label">Homme Deep Cleansing Cool</span>
                                 </label>
                             </li>
                             <li class="catalog-filter-item">
                                 <label class="control">
-                                    <input class="control-input" type="checkbox" name="so-intense" id="" checked>
-                                    So Intense
+                                    <input class="visually-hidden control-input" type="checkbox" name="so-intense" id="" checked>
+                                    <span class="control-mark"></span>
+                                    <span class="control-label">So Intense</span>
                                 </label>
                             </li>
                             <li class="catalog-filter-item">
                                 <label class="control">
-                                    <input class="control-input" type="checkbox" name="sprekenhus" id="">
-                                    Sprekenhus
+                                    <input class="visually-hidden control-input" type="checkbox" name="sprekenhus" id="">
+                                    <span class="control-mark"></span>
+                                    <span class="control-label">Sprekenhus</span>
                                 </label>
                             </li>
                             <li class="catalog-filter-item">
                                 <label class="control">
-                                    <input class="control-input" type="checkbox" name="firm-storе" id="">
-                                    Firm Storе
+                                    <input class="visually-hidden control-input" type="checkbox" name="firm-storе" id="">
+                                    <span class="control-mark"></span>
+                                    <span class="control-label">Firm Storе</span>
                                 </label>
                             </li>
                             <li class="catalog-filter-item">
                                 <label class="control">
-                                    <input class="control-input" type="checkbox" name="winter-body" id="" checked>
-                                    Winter Body
+                                    <input class="visually-hidden control-input" type="checkbox" name="winter-body" id="" checked>
+                                    <span class="control-mark"></span>
+                                    <span class="control-label">Winter Body</span>
                                 </label>
                             </li>
                         </ul>
@@ -133,20 +168,23 @@
                         <ul class="catalog-filter-group">
                             <li class="catalog-filter-item">
                                 <label class="control">
-                                    <input class="control-input" type="radio" name="product-group" value="shaving-supplies">
-                                    Бритвенные принадлежности
+                                    <input class="visually-hidden control-input" type="radio" name="product-group" value="shaving-supplies">
+                                    <span class="control-mark"></span>
+                                    <span class="control-label">Бритвенные принадлежности</span>
                                 </label>
                             </li>
                             <li class="catalog-filter-item">
                                 <label class="control">
-                                    <input class="control-input" type="radio" name="product-group" value="care-products" checked>
-                                    Средства для ухода
+                                    <input class="visually-hidden control-input" type="radio" name="product-group" value="care-products" checked>
+                                    <span class="control-mark"></span>
+                                    <span class="control-label">Средства для ухода</span>
                                 </label>
                             </li>
                             <li class="catalog-filter-item">
                                 <label class="control">
-                                    <input class="control-input" type="radio" name="product-group" value="accessories">
-                                    Аксессуары
+                                    <input class="visually-hidden control-input" type="radio" name="product-group" value="accessories">
+                                    <span class="control-mark"></span>
+                                    <span class="control-label">Аксессуары</span>
                                 </label>
                             </li>
                         </ul>

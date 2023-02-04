@@ -14,8 +14,8 @@
   font-weight: 700;
   font-display: swap;
   src:  local('PT Sans Narrow'),
-        url('../fonts/PT_Sans-Narrow-Web-Bold.woff2') format('woff2'),
-        url('../fonts/PT_Sans-Narrow-Web-Bold.woff') format('woff');
+        url('../fonts/PT_Sans-Narrow-Web-Bold.woff2') format('woff2');
+        /* url('../fonts/PT_Sans-Narrow-Web-Bold.woff') format('woff'); */
 }
 
 @font-face {
@@ -24,8 +24,7 @@
   font-weight: 400;
   font-display: swap;
   src:  local('PT Sans'),
-        url('../fonts/pt-sans-v17-latin_cyrillic-regular.woff2') format('woff2'),
-        url('../fonts/pt-sans-v17-latin_cyrillic-regular.woff') format('woff');
+        url('../fonts/ptsans-400.woff2') format('woff2');
 }
 
 @font-face {
@@ -34,8 +33,7 @@
   font-weight: 700;
   font-display: swap;
   src:  local('PT Sans'),
-        url('../fonts/pt-sans-v17-latin_cyrillic-700.woff2') format('woff2'),
-        url('../fonts/pt-sans-v17-latin_cyrillic-700.woff') format('woff');
+        url('../fonts/ptsans-700.woff2') format('woff2');
 }
 
 * {
@@ -123,8 +121,14 @@ table {
 }
 
 .visually-hidden {
-  position: fixed;
-  transform: scale(0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 body {
@@ -228,6 +232,10 @@ body {
   margin-left: auto;
 }
 
+.nav-item {
+  position: relative;
+}
+
 .nav-link {
   position: relative;
   display: block;
@@ -260,8 +268,6 @@ body {
   fill: #bdbdbd;
 }
 
-/* Разобраться с размерами иконок!!!!!!!!!!!!!!!!!!! */
-
 .navigation-link-login {
   padding-left: 44px;
 }
@@ -274,8 +280,8 @@ body {
 }
 
 .nav-user .nav-link {
-  min-width: 16px;
-  min-height: 22px;
+  min-width: 56px;
+  min-height: 70px;
 }
 
 .nav-link:hover {
@@ -310,6 +316,77 @@ body {
   margin-right: 100px;
 }
 
+/* popover */
+
+.popover-cart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 420px;
+  min-height: 180px;
+  padding: 40px;
+  padding-right: 0;
+  color: #242424;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  box-shadow: 0px 18px 40px rgba(79, 70, 60, 0.16);
+  z-index: 1;
+  display: none;
+}
+
+.popover-open {
+  display: block;
+}
+
+.popover-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 72px;
+  height: 70px;
+  padding-left: 44px;
+  color: #242424;
+  background-color: #ffffff;
+  background-image: url(../svg/cart-black-icon.svg);
+  background-repeat: no-repeat;
+  background-position: 22px center;
+}
+
+.popover-content {
+  height: 100%;
+}
+
+.popover-item {
+  display: grid;
+  grid-template-columns: 324px 56px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.popover-item + .popover-item {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px dashed #595959;
+}
+
+.popover-text {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.popover-price {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  font-family: 'PT Sans', sans-serif;
+  color: #af7842;
+}
+
+.popover-button {
+  grid-column: 2 / -1;
+  grid-row: 1 / 3;
+}
 /* main */
 
 .main-index {
@@ -578,16 +655,34 @@ body {
   flex-direction: column;
 }
 
-.form-group input {
-  padding: 10px 16px;
+.form-label {
+  position: relative;
+  margin-bottom: 8px;
+  padding-right: 16px;
 }
 
-.form-label {
-  margin-bottom: 8px;
+.appointment-form .info {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../svg/info-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-color: transparent;
+}
+
+.field {
+  padding: 11px 14px;
+  background-color: #ffffff;
+  border: 2px solid #242424;
 }
 
 .appointment-form-name {
   grid-column: 1 / -1;
+}
+
+.appointment-form-name:last-of-type {
+  margin-bottom: 12px;
 }
 
 .button-appointment {
@@ -602,16 +697,37 @@ body {
   text-transform: uppercase;
 }
 
-.appointment-form .info {
-  display: none;
-}
-
 input::placeholder {
   font-weight: 700;
   font-size: 16px;
   color: #bdbdbd;
 }
 
+.field:not(:placeholder-shown) {
+  font-weight: 700;
+}
+
+.field:hover {
+  border: 2px solid #af7842;
+  transition: all 0.2s ease;
+}
+
+.field:focus {
+  border: 2px solid #af7842;
+  outline: 2px solid #dbb590;
+}
+
+.field:focus:invalid {
+  border: 2px solid #ea5454;
+  outline: 2px solid #dbb590;
+}
+
+.field:disabled,
+.field:disabled:hover {
+  color: #595959;
+  background-color: #e7e7e7;
+  border: 2px solid #595959;
+}
 
 /* footer */
 
@@ -669,10 +785,8 @@ input::placeholder {
   display: flex;
 }
 
-.footer-subscribe .input {
-  padding: 10px 16px;
+.footer-subscribe .field {
   flex-grow: 1;
-  border: 2px solid #000000;
 }
 
 .subscribe-button {
@@ -753,6 +867,8 @@ input::placeholder {
   text-transform: uppercase;
 }
 
+/* breadcrumbs */
+
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -783,6 +899,7 @@ input::placeholder {
 }
 
 .catalog-filter-title {
+  margin-bottom: 22px;
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -791,9 +908,180 @@ input::placeholder {
   color: #000000;
 }
 
+/* range bar */
+
+.range-scale {
+  position: relative;
+  height: 4px;
+  margin-bottom: 16px;
+  background-color: #242424;
+  border-radius: 2px;
+}
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background: #af7842;
+  border-radius: 2px;
+}
+
+.range-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 2px solid #242424;
+  border-radius: 50%;
+}
+
+.range-toggle:hover {
+  background-color: #dbb590;
+}
+
+.range-toggle:focus,
+.range-toggle:active {
+  outline: 3px solid #af7842;
+  background-color: #dbb590;
+}
+
+.range-toggle-min {
+  left: -10px;
+  top: -8px;
+}
+
+.range-toggle-max {
+  right: -10px;
+  top: -8px;
+}
+
+.range-wrapper-inputs {
+  display: flex;
+  justify-content: center;
+}
+
+.catalog-filter-label {
+  display: flex;
+  margin-right: 5px;
+}
+
+.catalog-filter-input {
+  width: 33px;
+  padding: 0 2px;
+  text-align: center;
+  font: inherit;
+  background-color: transparent;
+  appearance: textfield;
+}
+
+/* убираем стрелки-переключатели */
+.catalog-filter-input::-webkit-outer-spin-button,
+.catalog-filter-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* filters */
+
+.catalog-filter-group {
+  margin-bottom: 40px;
+}
+
 .control {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+}
+
+.catalog-filter-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.control-mark {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #242424;
+}
+
+.control-mark::before {
+  content: '';
+  display: none;
+  height: 10px;
+  width: 10px;
+  background-image: url(../svg/checked-icon.svg);
+  background-position: center center;
+}
+
+.control-input[type="radio"] + .control-mark {
+  border-radius: 50%;
+}
+
+.control-mark::after {
+  content: '';
+  display: none;
+  width: 9px;
+  height: 9px;
+  background-color: #242424;
+  border-radius: 50%;
+}
+
+.control-label {
   font-weight: 700;
 }
+
+.control:hover .control-mark {
+  border: 2px solid #af7842;
+}
+
+.control:focus-within .control-mark {
+  outline: 2px solid #dbb590;
+}
+
+.control-input[type="checkbox"]:disabled + .control-mark {
+  border-color: 2px solid #BDBDBD;
+  /* выяснить с disabled чекбокса */
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  display: block;
+}
+
+.control-input[type="checkbox"]:checked + .control-markб
+.control-input[type="radio"]:checked + .control-mark {
+  outline: none;
+}
+
+.control-input[type="radio"]:checked + .control-mark::after {
+  display: block;
+}
+
+
+/* другой способ сделать крестик через две линии */
+/* .control-input[type="checkbox"]:checked + .control-mark::before,
+.control-input[type="checkbox"]:checked + .control-mark::after {
+  position: absolute;
+  top: 7px;
+  left: 2px;
+  width: 12px;
+  height: 2px;
+  background-color: #242424;
+  content: "";
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  transform: rotate(45deg);
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::after {
+  transform: rotate(-45deg);
+} */
+
+/* cards catalog */
 
 .catalog-wrapper {
   width: 700px;
@@ -815,12 +1103,12 @@ input::placeholder {
   appearance: none;
   width: 260px;
   height: 44px;
-  padding: 10px 16px;
+  padding: 10px 48px 10px 16px;
   font-weight: 700;
   font-size: 16px;
   font-family: inherit;
   background-image: url(../svg/arrow-down-black-icon.svg);
-  background-position: center right 18px;
+  background-position: right 18px center;
   background-repeat: no-repeat;
   background-size: 14px;
   border: 2px solid #242424;
@@ -852,6 +1140,7 @@ input::placeholder {
 .card-grid-toggle svg {
   fill: #000000;
 }
+
 .card-grid-toggle-current {
   background-color: #000000;
 }
