@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Барбершоп «Бородинский»></title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/fav-ico32x32.png">
 </head>
 <body>
 
@@ -41,7 +42,7 @@
                                 </svg>
                             <span class="visually-hidden">Корзина</span>
                         </a>
-
+                        <!-- Popover -->
                         <div class="popover popover-cart">
                             <div class="popover-content">
                                 <h2 class="index-title popover-title">
@@ -96,7 +97,7 @@
             <h1 class="visually-hidden">
                 Барбершоп «Бородинский»
             </h1>
-            <img class="logo" src="./svg/logo-full-white.svg" alt="Логотип Барбершопа «Бородинский»." width="367" height="152">
+            <img class="logo" src="./svg/logo-full-white.svg" alt="Логотип Барбершопа «Бородинский»." width="364" height="152">
             <section class="advantages">
                 <h2 class="visually-hidden">
                     Преимущества
@@ -242,7 +243,7 @@
                     <a class="button" href="https://www.google.com/maps/place/%D0%BD%D0%B0%D0%B1.+P%D0%B5%D0%BA%D0%B8+%D0%9A%D0%B0%D1%80%D0%BF%D0%BE%D0%B2%D0%BA%D0%B8,+5+%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81+%D0%9F,+%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3,+197022/@59.9683447,30.3151923,17z/data=!3m1!4b1!4m5!3m4!1s0x4696315bc4e8ce61:0x74d4f0cbfe1fd995!8m2!3d59.968342!4d30.317381">
                         Как проехать
                     </a>
-                    <a class="button feedback-button" href="#!">
+                    <a class="button button-light button-feedback" href="#!">
                         Обратная связь
                     </a>
                 </section>
@@ -256,14 +257,34 @@
                     </p>
                     <form class="appointment-form" action="https://echo.htmlacademy.ru/" method="post">
                         <p class="form-group appointment-form-date">
-                            <label class="form-label" for="app-date">Дата</label>
+                            <span class="form-label form-label-icon">
+                                <label class="form-label" for="app-date">Дата</label>
+                                <span class="tooltip">
+                                    <button class="tooltip-button" type="button" aria-labelledby="tooltip-label-date">
+                                        <svg class="tooltip-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                            <path fill="currentColor" fill-rule="evenodd" d="M6 12A6 6 0 1 0 6 0a6 6 0 0 0 0 12Zm1.27-8.73a1.27 1.27 0 1 1-2.54 0 1.27 1.27 0 0 1 2.54 0Zm0 2.23V9H4.73V5.5h2.54Z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </button>
+                                    <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</span>
+                                </span>
+                            </span>
                             <button class="info">
                                 <span class="visually-hidden">Посмотреть дополнительную информацию</span>
                             </button>
                             <input class="field" type="text" name="app-date" id="app-date" placeholder="01.01.2020">
                         </p>
                         <p class="form-group appointment-form-time">
-                            <label class="form-label" for="app-time">Время</label>
+                            <span class="form-label form-label-icon">
+                                <label class="form-label" for="app-time">Время</label>
+                                <span class="tooltip">
+                                    <button class="tooltip-button" type="button" aria-labelledby="tooltip-label-date">
+                                        <svg class="tooltip-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                            <path fill="currentColor" fill-rule="evenodd" d="M6 12A6 6 0 1 0 6 0a6 6 0 0 0 0 12Zm1.27-8.73a1.27 1.27 0 1 1-2.54 0 1.27 1.27 0 0 1 2.54 0Zm0 2.23V9H4.73V5.5h2.54Z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </button>
+                                    <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</span>
+                                </span>
+                            </span>
                             <button class="info">
                                 <span class="visually-hidden">Посмотреть дополнительную информацию</span>
                             </button>
@@ -313,7 +334,7 @@
                     <form class="footer-subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
                         <label class="visually-hidden" for="email-subscribe">Email</label>
                         <input class="field" type="email" name="email-subscribe" id="email-subscribe" placeholder="email@htmlacademy.ru" required>
-                        <button class="button subscribe-button">
+                        <button class="button button-subscribe">
                             <span class="visually-hidden">Отправить</span>
                         </button>
                     </form>
@@ -348,6 +369,42 @@
         </div>
     
     </footer>
+
+    <!-- Модальное окно -->
+    <div class="modal-container modal-container-close">
+        <div class="modal modal-auth">
+            <button class="button-modal-close" type="button">
+                <span class="visually-hidden">
+                    Закрыть окно
+                </span>
+            </button>
+            <section class="modal-content">
+                <h2 class="index-title modal-title">
+                    Личный кабинет
+                </h2>
+                <form class="auth-form" action="https://echo.htmlacademy.ru/" method="post">
+                    <p class="auth-group">
+                        <label class="visually-hidden" for="login">Ваш логин</label>
+                        <input class="field auth-field" type="text" name="login" id="login" placeholder="Логин" required>
+                    </p>
+                    <p class="auth-group">
+                        <label class="visually-hidden" for="password">Ваш пароль</label>
+                        <input class="field auth-field" type="password" name="password" id="password" placeholder="Пароль" required>
+                    </p>
+                    <p class="auth-group auth-user-option">
+                        <label class="control user-auth">
+                            <input class="visually-hidden control-input" type="checkbox" name="so-intense" checked>
+                            <span class="control-mark"></span>
+                            <span class="control-label">Запомнить меня</span>
+                        </label>
+                        <a class="auth-form-recovery" href="#">Забыли пароль</a>
+                    </p>
+                    <button class="button auth-form-button" type="submit">Войти</button>
+                    <a class="button button-light auth-form-register" href="#">Регистрация</a>
+                </form>
+            </section>
+        </div>
+    </div>
 
 </body>
 </html>
