@@ -22,7 +22,7 @@
                         <a href="about.html" class="nav-link">О нас</a>
                     </li>
                     <li class="nav-item">
-                        <a href="catalog.html" class="nav-link nav-link-current">Каталог</a>
+                        <a class="nav-link nav-link-current">Каталог</a>
                     </li>
                     <li class="nav-item">
                         <a href="faq.html" class="nav-link ">Частые вопросы</a>
@@ -41,6 +41,38 @@
                             <svg class="navigation-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.1 6 3.57.9l.08-.9h8.67l.1.9.48 5.1H15.63l-.14 1.12-1 8-.1.88H1.61l-.11-.88-1-8L.37 6H3.1Zm2 0h5.8l-.38-4H5.48L5.1 6Zm-1.72 8-.75-6h10.74l-.75 6H3.38ZM8.5 9.5v3h2v-3h-2Zm-3 3v-3h2v3h-2Z" clip-rule="evenodd"/></svg>
                             <span class="visually-hidden">Корзина</span>
                         </a>
+                        <!-- Popover -->
+                        <div class="popover popover-cart">
+                            <div class="popover-content">
+                                <h2 class="index-title popover-title">
+                                    Корзина
+                                </h2>
+                                <button class="button popover-close-button" type="button">22
+                                    <span class="visually-hidden">Закрыть корзину</span>
+                                </button>
+                                <ul class="popover-list">
+                                    <li class="popover-item">
+                                        <p class="popover-text">Стрижка машинкой</p>
+                                        <p class="popover-price">800 ₽</p>
+                                        <button class="button popover-button" type="button">
+                                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+                                                <path fill="#fff" fill-rule="evenodd" d="M3.42 1 3.7.5 4 0H12l.29.5.28.5h3.05l-.14 1.12-1.57 13-.11.88H2.19l-.1-.88-1.58-13L.37 1h3.05Zm.54 13L2.63 3h10.74l-1.33 11H3.96ZM9 4.93l-.5 7 2 .14.5-7-2-.14Zm-3.5 7.14-.5-7 2-.14.5 7-2 .14Z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="visually-hidden">Удалить товар из корзины</span>
+                                        </button>
+                                    </li>
+                                    <li class="popover-item">
+                                        <p class="popover-text">Стрижка Усов</p>
+                                        <p class="popover-price">1200 ₽</p> <button class="button popover-button" type="button">
+                                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+                                                <path fill="#fff" fill-rule="evenodd" d="M3.42 1 3.7.5 4 0H12l.29.5.28.5h3.05l-.14 1.12-1.57 13-.11.88H2.19l-.1-.88-1.58-13L.37 1h3.05Zm.54 13L2.63 3h10.74l-1.33 11H3.96ZM9 4.93l-.5 7 2 .14.5-7-2-.14Zm-3.5 7.14-.5-7 2-.14.5 7-2 .14Z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="visually-hidden">Удалить товар из корзины</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a href="#!" class="nav-link">

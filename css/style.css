@@ -1187,7 +1187,7 @@ input::placeholder {
   display: block;
 }
 
-.control-input[type="checkbox"]:checked + .control-markб
+.control-input[type="checkbox"]:checked + .control-mark,
 .control-input[type="radio"]:checked + .control-mark {
   outline: none;
 }
