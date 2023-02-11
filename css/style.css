@@ -305,12 +305,20 @@ body {
   fill: #ffffff;
 }
 
+.nav-logo {
+  margin-right: 100px;
+}
+
 .page-header-logo {
   display: block;
   max-width: 140px;
-  padding: 24px 0;
-  margin-right: 100px;
+  padding: 24px 4px;
 }
+
+.nav-logo:focus {
+  outline: 4px solid #e7e7e7;
+}
+
 /* фокус на родительском элементе должен открывать корзину */
 /* фокус внутри скрытых элементов */
 .nav-item:focus-within > .popover-cart {
@@ -323,6 +331,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  display: none;
   width: 420px;
   min-height: 180px;
   padding: 40px;
@@ -332,7 +341,6 @@ body {
   background-color: #ffffff;
   box-shadow: 0px 18px 40px rgba(79, 70, 60, 0.16);
   z-index: 1;
-  display: none;
 }
 
 .popover-open {
@@ -1160,8 +1168,8 @@ input::placeholder {
 .control-mark::after {
   content: '';
   display: none;
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   background-color: #242424;
   border-radius: 50%;
 }
@@ -1174,28 +1182,24 @@ input::placeholder {
   border: 2px solid #af7842;
 }
 
-.control:focus-within .control-mark {
-  outline: 2px solid #dbb590;
+.control-input:disabled + .control-mark {
+  border: 2px solid #BDBDBD;
 }
 
-.control-input[type="checkbox"]:disabled + .control-mark {
-  border-color: 2px solid #BDBDBD;
-  /* выяснить с disabled чекбокса */
+.control-input[type="checkbox"]:focus + .control-mark,
+.control-input[type="radio"]:focus + .control-mark,
+.control-input[type="checkbox"]:checked:focus + .control-mark,
+.control-input[type="radio"]:checked:focus + .control-mark {
+  outline: 2px solid #dbb590;
 }
 
 .control-input[type="checkbox"]:checked + .control-mark::before {
   display: block;
 }
 
-.control-input[type="checkbox"]:checked + .control-mark,
-.control-input[type="radio"]:checked + .control-mark {
-  outline: none;
-}
-
 .control-input[type="radio"]:checked + .control-mark::after {
   display: block;
 }
-
 
 /* другой способ сделать крестик через две линии */
 /* .control-input[type="checkbox"]:checked + .control-mark::before,
