@@ -411,7 +411,8 @@ body {
   margin-bottom: 32px;
   padding: 40px;
   color: #242424;
-  background: url(../images/noisy-texture-80x80.png) #fbf7f4;
+  background-image: url(../images/noisy-texture-80x80.png);
+  background-color: #FBF7F4;
 }
 
 .section-wrapper::before {
@@ -672,6 +673,10 @@ body {
 .form-label {
   position: relative;
   margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
 }
 
 .field {
@@ -691,13 +696,6 @@ body {
 .button-appointment {
   grid-column: 1 / -1;
   justify-self: start;
-}
-
-.form-label {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  text-transform: uppercase;
 }
 
 input::placeholder {
